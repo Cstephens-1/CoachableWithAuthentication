@@ -19,8 +19,7 @@ function WorkoutLibrary({currentUser}){
     function fetchExerciseLists(){
         fetch("http://localhost:3000/exercise_lists")
         .then(resp=> resp.json())
-        .then(eachExerciseList => setExerciseList(eachExerciseList))
-    }
+        .then(eachExerciseList => setExerciseList(eachExerciseList))}
 
 
     useEffect(fetchExerciseLists, [])

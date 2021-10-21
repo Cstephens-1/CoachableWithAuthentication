@@ -45,8 +45,8 @@ function ExerciseLibrary({currentUser}){
             title: title,
             muscle_group: muscleGroups,
             description: description,
-            // user_id: user
-        };
+            user_id: currentUser.id
+        }
         fetch("http://localhost:3000/exercises", {
             method: "POST",
             headers: {

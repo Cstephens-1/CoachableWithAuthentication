@@ -49,22 +49,9 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                 },
                 body: JSON.stringify(newExerciseList)})
                 .then(resp=> resp.json())
-                .then(newExerciseListFromDB => console.log(newExerciseListFromDB))
+                .then(newExerciseListFromDB => fetchWorkoutPlans())
         }
             
-        
-        //not sure what this is below here
-    // function mapWorkouts(gymClass){
-    //     return(
-    //         gymClass.workout_plans.map(workout=>{
-    //             console.log(workout.id)
-    //             return(
-    //                 <h5>{workout.title}</h5>
-    //             )
-    //         })
-    //     )
-    // }
-
 
     //in order to add an exercise (an exercise lives on an exercise list), I need to fetch all of the exercise lists that exist and map them to an select drop down. From there I can add a EL to a workout plan
     
@@ -84,9 +71,6 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                     )
                 })}
             </select>
-        
-        {/* <ButtonStyler>Edit this workout</ButtonStyler>
-        <input placeholder="edit this workout"></input> */}
         </WorkoutCardStyler>
 
     )

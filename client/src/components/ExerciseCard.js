@@ -6,7 +6,7 @@ function ExerciseCard({exercise, handleDelete, editExerciseDescription, currentU
 
     console.log("this is the currentUser", currentUser)
 
-    console.log(exercise)
+    // console.log(exercise)
 
     function deleteThisCard(){
         handleDelete(exercise)
