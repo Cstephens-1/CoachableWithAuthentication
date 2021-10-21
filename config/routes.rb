@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :exercise_lists
+  resources :class_workouts
+  resources :class_students
+  resources :user_workouts
+  resources :workout_plans
+  resources :gym_classes
+  resources :exercises
+  resources :students
   resources :users
   get "/me", to: "users#show"
   post "/signup", to: "users#create"

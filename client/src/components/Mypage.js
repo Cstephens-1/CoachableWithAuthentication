@@ -1,9 +1,9 @@
 // import { useEffect, useState } from "react"
-// import styled from "styled-components"
+import styled from "styled-components"
 // import GymClassCard from "./GymClassCard"
-// import MyClasses from "./MyClasses"
+import MyClasses from "./MyClasses"
 // import NavBar from "./NavBar"
-// import WorkoutLibrary from "./WorkoutLibrary"
+import WorkoutLibrary from "./WorkoutLibrary"
  
  
 function Mypage(){
@@ -30,7 +30,6 @@ function Mypage(){
  
     return(
         <div>
-            <h1>test in My page</h1>
              {/* <NavBar /> */}
         {/* <MuscleManWrapper>
             <p>Muscle Man goes here (colored to see the div)</p>
@@ -41,10 +40,10 @@ function Mypage(){
         {/* <TodayStyler>
         <h1>Today's Plans (calendar)</h1>
         </TodayStyler> */}
-        {/* <ClassWrapper>
+        <ClassWrapper>
         <MyClasses/>
         <WorkoutLibrary />
-        </ClassWrapper> */}
+        </ClassWrapper>
         </div>
     )}
  
@@ -55,12 +54,12 @@ export default Mypage
 //     flex-direction: row;
 // `
 
-// const ClassWrapper = styled.div`
-//     width: 100vw;
-//     background-color: skyblue;
-//     /* margin-left: 50%; */
-//     text-align: center;
-// `
+const ClassWrapper = styled.div`
+    width: 100vw;
+    background-color: skyblue;
+    /* margin-left: 50%; */
+    text-align: center;
+`
 
 // const MuscleManWrapper = styled.div`
 //     height: 55vh;
