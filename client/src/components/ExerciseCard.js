@@ -1,9 +1,10 @@
 // import { useState } from "react"
 import styled from "styled-components"
 
-function ExerciseCard({exercise, handleDelete, editExerciseDescription}){
+function ExerciseCard({exercise, handleDelete, editExerciseDescription, currentUser}){
     // const [newDescription, setNewDescription]=useState("")
 
+    console.log("this is the currentUser", currentUser)
 
     console.log(exercise)
 
@@ -25,12 +26,15 @@ function ExerciseCard({exercise, handleDelete, editExerciseDescription}){
         <p>{exercise.description}</p>
         {/* <p><link to={exercise.link}></link>Link to view exercise</p> */}
         <p>uploaded by: {exercise.user.name}</p>
-        <ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler>
+        {exercise.user.name === currentUser.username?(<ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler>) : (<></>)}
+        {/* <ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler> */}
         {/* <ButtonStyler onClick={editThisExerciseDescription}>Edit this exercise</ButtonStyler>
         <input placeholder="update description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)}/> */}
         </ExerciseCardStyler>
     )
 }
+
+// 
 
 export default ExerciseCard
 

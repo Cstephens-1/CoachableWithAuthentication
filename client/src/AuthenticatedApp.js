@@ -12,33 +12,33 @@ import Students from './components/Students';
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
-  const [allStudents, setAllStudents]=useState([])
-  const [allExercises, setAllExercises]=useState([])
-  const [allWorkouts, setAllWorkouts]=useState([])
-  const [allClasses, setAllClasses]=useState([])
+  // const [allStudents, setAllStudents]=useState([])
+  // const [allExercises, setAllExercises]=useState([])
+  // const [allWorkouts, setAllWorkouts]=useState([])
+  // const [allClasses, setAllClasses]=useState([])
 
-  useState(()=>{
-    fetch("http://localhost:3000/students")
-    .then(resp=> resp.json())
-    .then(eachStudent => setAllStudents(eachStudent));
+  // useState(()=>{
+  //   fetch("http://localhost:3000/students")
+  //   .then(resp=> resp.json())
+  //   .then(eachStudent => setAllStudents(eachStudent));
 
-    fetch("http://localhost:3000/gym_classes")
-    .then(resp=> resp.json())
-    .then(eachClass => setAllClasses(eachClass));
+  //   fetch("http://localhost:3000/gym_classes")
+  //   .then(resp=> resp.json())
+  //   .then(eachClass => setAllClasses(eachClass));
 
-    fetch("http://localhost:3000/workout_plans")
-    .then(resp=> resp.json())
-    .then(eachWorkoutPlan => setAllWorkouts(eachWorkoutPlan));
+  //   fetch("http://localhost:3000/workout_plans")
+  //   .then(resp=> resp.json())
+  //   .then(eachWorkoutPlan => setAllWorkouts(eachWorkoutPlan));
 
-    fetch("http://localhost:3000/students")
-    .then(resp=> resp.json())
-    .then(eachExercise => setAllExercises(eachExercise));
-  }, [])
+  //   fetch("http://localhost:3000/students")
+  //   .then(resp=> resp.json())
+  //   .then(eachExercise => setAllExercises(eachExercise));
+  // }, [])
 
-  console.log("these are the students ", allStudents)
-  console.log("these are the Workouts ", allWorkouts)
-  console.log("these are the Exercises ", allExercises)
-  console.log("these are the Classes ", allClasses)
+  // console.log("these are the students ", allStudents)
+  // console.log("these are the Workouts ", allWorkouts)
+  // console.log("these are the Exercises ", allExercises)
+  // console.log("these are the Classes ", allClasses)
 
   const history = useHistory()
   
@@ -62,17 +62,17 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       </nav>
       <Switch>
         <Route path="/mypage">
-          <Mypage allClasses={allClasses}/>
+          <Mypage />
         </Route>
         <Route exact path="/library">
-            <ExerciseLibrary/>
+            <ExerciseLibrary currentUser={currentUser}/>
           </Route>
           <Route exact path="/myclasses">
             <MyClasses/>
           </Route>
 
           <Route exact path="/workouts" >
-            <WorkoutLibrary/>
+            <WorkoutLibrary />
           </Route>
           <Route  exact path="/students">
             <Students/>

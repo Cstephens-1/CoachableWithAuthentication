@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 
-function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLists}){
+function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLists, currentUser}){
     const [exercises, setExercises] = useState([])
     const [selectedExercise, setSelectedExercise] = useState([])
     console.log("This is a selected exercise", selectedExercise)

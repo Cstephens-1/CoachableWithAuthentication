@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import WorkoutCard from "./WorkoutCard"
 
-function WorkoutLibrary(){
+function WorkoutLibrary({currentUser}){
     const [workoutLibrary, setWorkoutLibrary]=useState([])
     const [newWorkoutTitle, setTitle] = useState("")
     const[exerciseList, setExerciseList] = useState([])
+
+    // console.log("this is the currentUser", currentUser)
 
     //fetch existing workout plans
     // useEffect(()=>{
@@ -36,7 +38,7 @@ function WorkoutLibrary(){
         return(
             workoutLibrary.map(workout =>{
                 return(
-                    <WorkoutCard workout={workout} key={workout.id} handleDelete={handleDelete} fetchWorkoutPlans={fetchWorkoutPlans} fetchExerciseLists={fetchExerciseLists}/>
+                    <WorkoutCard workout={workout} currentUser={currentUser} key={workout.id} handleDelete={handleDelete} fetchWorkoutPlans={fetchWorkoutPlans} fetchExerciseLists={fetchExerciseLists}/>
                 )
             })
         )

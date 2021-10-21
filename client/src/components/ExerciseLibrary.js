@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import ExerciseCard from "./ExerciseCard"
 
-function ExerciseLibrary(){
+function ExerciseLibrary({currentUser}){
     const [exerciseLibrary, setExerciseLibrary]=useState([])
     const [title, setTitle] = useState("")
     const [muscleGroups, setMuscleGroups] = useState("")
@@ -32,7 +32,7 @@ function ExerciseLibrary(){
         return(
             exerciseLibrary.map(exercise =>{
                 return( 
-                    <ExerciseCard exercise={exercise} key={exercise.id} handleDelete={handleDelete} editExerciseDescription={editExerciseDescription}/>   
+                    <ExerciseCard exercise={exercise} currentUser={currentUser} key={exercise.id} handleDelete={handleDelete} editExerciseDescription={editExerciseDescription}/>   
                 )})
             )
     }
