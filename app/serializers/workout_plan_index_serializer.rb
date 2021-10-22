@@ -12,6 +12,7 @@ class WorkoutPlanIndexSerializer < ActiveModel::Serializer
     included_exercises = workout_plan_exercise_list.map do |each_exercise_list|
 
       new_exercise_list_hash = {
+        exercise_id: each_exercise_list.id,
         exercise_title: each_exercise_list.exercise.title,
         exercise_reps: each_exercise_list.reps
       }

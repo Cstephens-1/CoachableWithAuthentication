@@ -44,6 +44,7 @@ function Login({ setCurrentUser }) {
           <label htmlFor="password">Password</label>
           <input type="password" name="" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </p>
+        
         <p><button type="submit">Log In</button></p>
         <p>-- or --</p>
         <p><Link to="/signup">Sign Up</Link></p>

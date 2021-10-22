@@ -12,11 +12,23 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                 workout.formatted_exercise_list.map(exercise_list =>{
                 return(
                     <>
-                    <li>{exercise_list.exercise_reps} {exercise_list.exercise_title}</li>
+                    <li>{exercise_list.exercise_reps} {exercise_list.exercise_title} <button onClick={()=> DeleteAnAssignment(exercise_list.exercise_id)}>Delete this assignment</button></li>
                     </>
                 )
             }))
             }
+
+            //delete an exercise from a workout..an exercise lives on an exercise list which lives on a workout plan.
+           
+            function DeleteAnAssignment(id){
+                // console.log(id)
+                    fetch(`http://localhost:3000/exercise_lists/${id}`,{ 
+                        method: "DELETE"
+                    }).then(resp=> resp.json()).then(thisExercise=> fetchWorkoutPlans())
+                }
+            
+
+
 
             useEffect(()=>{
                 fetch("http://localhost:3000/exercises")
@@ -53,8 +65,6 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
         }
             
 
-    //in order to add an exercise (an exercise lives on an exercise list), I need to fetch all of the exercise lists that exist and map them to an select drop down. From there I can add a EL to a workout plan
-    
 
     return(
         <WorkoutCardStyler>
@@ -67,7 +77,7 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                 <option >Please select an exercise</option>
                 {exercises.map(exercise =>{
                     return(
-                        <option value={exercise.id} key={exercise.id}>{exercise.reps} {exercise.title}</option>
+                        <option value={exercise.id} key={exercise.id}>{exercise.title}</option>
                     )
                 })}
             </select>

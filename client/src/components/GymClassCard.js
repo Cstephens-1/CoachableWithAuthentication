@@ -36,32 +36,23 @@ function GymClassCard({gymClass, handleDelete, deleteAStudent, formattedStudents
     // console.log(gymClass)
     // console.log(gymClass.students)
 
-    // function deleteThisStudent(){
-    //     deleteAStudent(selectedStudent)
-    // }
-    
-
-
     //delete an existing class
     function deleteThisClass(){
         handleDelete(gymClass)
     }
 
-    //delete a student from a class....NEED HELP!!!!!
-    
-    // mapping over class_student
-    // function mapStudents(){
-    //     return(
-    //         classStudents.map(eachClassStudent=>{
-    //             return(
-    //                 <>
-    //                 <li>{eachClassStudent.student.name}</li>
-    //                 {/* <button onClick={deleteThisStudent}>delete this student</button> */}
-    //                 </>
-    //             )
-    //         })
-    //     )
-    // }
+  //delete a workout plan from an individual class. 
+
+    function deleteThisWorkoutFromThisClass(id){
+        // console.log(class_workout)
+        fetch(`http://localhost:3000/class_workouts/${id}`,{ 
+            method: "DELETE"
+        }).then(resp=> resp.json()).then(()=> fetchGymClasses())
+    }
+
+
+
+
 
     function deleteThisStudent(id){
         fetch(`http://localhost:3000/class_students/${id}`,{ 
@@ -90,11 +81,12 @@ function GymClassCard({gymClass, handleDelete, deleteAStudent, formattedStudents
     function mapWorkouts(gymClass){
         // console.log( "instance of gymclass", gymClass)
         return(
-            gymClass.workout_plans.map(workout=>{
+            
+            gymClass.formatted_class_workout_plans.map(workout=>{
                 return(
                     <>
-                    <h5>{workout.title}</h5>
-                    <button>Delete this workout</button>
+                    <h5>{workout.gym_class_class_workout_plan}</h5>
+                    <button onClick={()=> deleteThisWorkoutFromThisClass(workout.gym_class_workout_plan_id)}>Delete this workout</button>
                     </>
                 )
             })

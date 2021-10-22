@@ -1,40 +1,51 @@
-# class GymClassIndexSerializerSerializer < ActiveModel::Serializer
-#   attributes :id, :start_time, :end_time, :description, :formatted_gym_classes
-
-
-
-#   def formatted_gym_classes
-#     gym_class_workout_plans = object.workout_plans
-
-#     included_workouts = gym_class_workout_plans.map do |each_plan|
-#       new_workout_plan_hash = {
-#         exercise_title: each_plan.exercise_lists,
-#         exercise_reps: each_plan.exercise_lists
-#       }
-      
-#     end
+class GymClassIndexSerializerSerializer < ActiveModel::Serializer
+    attributes :id, :level, :description, :start_time, :end_time, :formatted_students
+    # has_one :user
   
-# end
-
-
-
-# def formatted_exercise_list
-#   workout_plan_exercise_list = object.exercise_lists
-#   # Us getting the array of exercise_lists that a workout_plan has
-
-#   # include_exercicises is the new array of exercise_lists that a workout_plan has, 
-#   # thet YOU are about to format the way you want
-#   ## its's the last thing in the method so it will be implicitly returnend
-#   included_exercises = workout_plan_exercise_list.map do |each_exercise_list|
-
-#     new_exercise_list_hash = {
-#       exercise_title: each_exercise_list.exercise.title,
-#       exercise_reps: each_exercise_list.reps
-#     }
-
-#   end
-
-# end
-
-
-# end
+    # has_many :class_students
+    has_many :class_workouts
+    # has_many :students, through: :class_students
+    has_many :workout_plans, through: :class_workouts
+  
+      # def formatted_workout_plans
+      #   gym_class_class_workouts = object.class_workouts
+      #   # Us getting the array of exercise_lists that a workout_plan has
+  
+      #   # include_exercicises is the new array of exercise_lists that a workout_plan has, 
+      #   # thet YOU are about to format the way you want
+      #   ## its's the last thing in the method so it will be implicitly returnend
+      #   updated_gym_class_data= gym_class_class_workouts.map do |each_gym_class_class_workout|
+  
+      #     gym_class_with_workout_and_class_workout = {
+      #       workout_plan_title: each_gym_class_class_workout.workout_plan.title,
+      #       workout_plan__id: each_gym_class_class_workout.id
+      #     }
+  
+      #   end
+      # end
+  
+  
+  
+  
+  
+  
+    def formatted_students
+      gym_class_class_students = object.class_students
+      # Us getting the array of exercise_lists that a workout_plan has
+  
+      # include_exercicises is the new array of exercise_lists that a workout_plan has, 
+      # thet YOU are about to format the way you want
+      ## its's the last thing in the method so it will be implicitly returnend
+      updated_gym_class_data= gym_class_class_students.map do |each_gym_class_class_student|
+  
+        gym_class_with_student_and_class_student = {
+          student_name: each_gym_class_class_student.student.name,
+          class_student_id: each_gym_class_class_student.id
+        }
+  
+      end
+    end
+    
+  end
+  
+  

@@ -1,23 +1,16 @@
 // import { useState } from "react"
 import styled from "styled-components"
 
-function ExerciseCard({exercise, handleDelete, editExerciseDescription, currentUser}){
-    // const [newDescription, setNewDescription]=useState("")
+function ExerciseCard({exercise, handleDelete, currentUser}){
+
 
     console.log("this is the currentUser", currentUser)
-
-    // console.log(exercise)
 
     function deleteThisCard(){
         handleDelete(exercise)
     }
 
-    // function editThisExerciseDescription(){
-    //     editExerciseDescription(exercise)
-    // }
-
    console.log(exercise)
-
 
     return(
         <ExerciseCardStyler>

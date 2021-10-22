@@ -6,6 +6,7 @@ function Signup({ setCurrentUser }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const [name, setName] = useState('')
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -40,44 +41,22 @@ function Signup({ setCurrentUser }) {
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <p>
-          <label 
-            htmlFor="username"
-          >
-            Username
-          </label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <label htmlFor="username">Username</label>
+          <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
         </p>
         <p>
-          <label 
-            htmlFor="password"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            name=""
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <label htmlFor="password">Password</label>
+          <input type="password"name="" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </p>
         <p>
-          <label 
-            htmlFor="password_confirmation"
-          >
-            Password Confirmation
-          </label>
-          <input
-            type="password"
-            name="password_confirmation"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-          />
+          <label htmlFor="password_confirmation">Password Confirmation</label>
+          <input type="password" name="password_confirmation" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>
         </p>
+        <p>
+          <label>Name</label>
+          <input type="text" name="" value={name} onChange={(e) => setName(e.target.value)}/>
+        </p>
+        
         <p><button type="submit">Sign Up</button></p>
         <p>-- or --</p>
         <p><Link to="/">Log In</Link></p>

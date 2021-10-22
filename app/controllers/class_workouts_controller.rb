@@ -10,6 +10,16 @@ class ClassWorkoutsController < ApplicationController
         render json: new_class_workout
     end
 
+    def destroy
+        class_workout = ClassWorkout.find_by(id: params[:id])
+        if class_workout 
+            class_workout.destroy
+            render json: class_workout
+        else
+            render json: {error: "that workout isn't on this class"}, status: :not_found
+        end
+    end
+
     private
 
     def class_workout_params
