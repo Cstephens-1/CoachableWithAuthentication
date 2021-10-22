@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
     end
 
     def create 
-        exercise = Exercise.new(title: params[:title], description: params[:description], muscle_group: params[:muscle_group], user_id: User.first.name)
+        exercise = Exercise.new(title: params[:title], description: params[:description], muscle_group: params[:muscle_group], user_id: User.first.id)
         if exercise.save
             render json: exercise, status: :created
         else
