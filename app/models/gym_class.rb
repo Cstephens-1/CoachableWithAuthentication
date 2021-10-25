@@ -5,4 +5,7 @@ class GymClass < ApplicationRecord
   has_many :class_workouts, dependent: :destroy
   has_many :students, through: :class_students
   has_many :workout_plans, through: :class_workouts
+
+  validates :start_time, presence: true
+  validates :end_time, presence: true
 end

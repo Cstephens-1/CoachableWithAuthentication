@@ -8,13 +8,13 @@
 puts "seeding data"
 
 cory = User.create(
-    username:"cory1", 
+    username:"Cory", 
     password:"123", 
     name: "Cory", 
 )
 
 trent = User.create(
-    username: "trent2",
+    username: "Trent",
     password:"345",
     name:"Trent",
 

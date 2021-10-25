@@ -5,12 +5,12 @@ import styled from "styled-components"
 function NavBar({handleLogout}){
     return(
         <NavBarStyler>
-        <ButtonStyler><Link to="/mypage">Home</Link></ButtonStyler>
-        <ButtonStyler><Link to="/myclasses">Class Library</Link></ButtonStyler>
-        <ButtonStyler><Link to="/library">Exercise Library</Link></ButtonStyler>
-        <ButtonStyler><Link to="/students">Student Library</Link></ButtonStyler>
-        <ButtonStyler><Link to="/workouts">Workout Library</Link></ButtonStyler>
-        <ButtonStyler onClick={handleLogout}><Link to="/">Logout</Link></ButtonStyler>
+        <NavLink to="/mypage">Home</NavLink>
+        <NavLink to="/myclasses">Class Library</NavLink>
+        <NavLink to="/library">Exercise Library</NavLink>
+        <NavLink to="/students">Student Library</NavLink>
+        <NavLink to="/workouts">Workout Library</NavLink>
+         <NavLink to="/" onClick={handleLogout}>Logout</NavLink>
         </NavBarStyler>
     )
 }
@@ -20,19 +20,26 @@ function NavBar({handleLogout}){
 export default NavBar
 
 const NavBarStyler = styled.div`
-    background-color: skyblue;
-    /* height: 100vh;
-    width: 150px; */
+    background-color: black;
+    /* height: 100vh; */
+    width: 150vw;
     display: flex;
     flex-direction: row;
     /* position: fixed; */
 `
 
-const ButtonStyler = styled.button`
-    border-radius: 8px;
-    font-size: 22px;
-    margin: 4px;
-    background-color: white;
+// const ButtonStyler = styled.button`
+//     border-radius: 8px;
+//     font-size: 22px;
+//     margin: 4px;
+//     background-color: white;
 
     
-`
+// `
+
+const NavLink = styled(Link)`
+font-family: Graduate;
+  color: white;
+  text-decoration: none;
+  padding:20px;
+  `

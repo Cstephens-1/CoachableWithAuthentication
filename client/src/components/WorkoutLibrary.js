@@ -74,13 +74,15 @@ function WorkoutLibrary({currentUser}){
 
     return(
         <>
-        <h1>Workout Templates</h1>
+        <H1styler>Workouts</H1styler>
         <h4>Plan your next workout</h4>
+        <FormStyler>
         <form onSubmit={handleSubmit}>
-            <label>Name of workout: </label>
+            <LabelStyler>Name of workout: </LabelStyler>
             <input type="text" value={newWorkoutTitle} onChange={(e) => setTitle(e.target.value)}/>
-            <button type="submit">Create a new workout</button>
+            <ButtonStyler type="submit">Create a new workout</ButtonStyler>
         </form>
+        </FormStyler>
         <LibaryStyler>
             {mapWorkouts()}
         </LibaryStyler>
@@ -91,7 +93,57 @@ function WorkoutLibrary({currentUser}){
 export default WorkoutLibrary
 
 const LibaryStyler = styled.div`
-    display: flexbox;
-    flex-direction: row;
+       display: flexbox;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: auto;
+    margin-top: 20px;
 `
 
+const FormStyler=styled.div`
+    display: flexbox;
+    flex-direction:row;
+    /* background-color: green; */
+    /* height: 200px; */
+    /* width:6.5vw; */
+    font-size: 20px;
+    margin: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    border-radius: 18px;
+    text-align: left;
+    width: 50vw;
+    /* height: 10vh; */
+`
+
+
+const LabelStyler = styled.label`
+  font-family: Graduate;
+  font-weight: 600;
+  margin-left: 10px;
+  font-size: 25px;
+`
+
+const ButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 25px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-left: 5vw;
+  margin-top: 10px;
+  &:hover {
+    color: white;
+    background: black;
+    /* padding-top: 10px; */
+  }
+`
+
+const H1styler = styled.h1`
+    font-family: Graduate;
+    font-size: 50px;
+    font-weight: 1500;
+`

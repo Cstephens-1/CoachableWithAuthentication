@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Redirect, useHistory, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import CoachableLogo from "../CoachableLogo1.PNG"
+import LoginButton from "../LogInButton.PNG"
+import flyingwitch from "../flyingwitch.png"
+import signupfont from '../signupfont.PNG'
 
 function Login({ setCurrentUser }) {
   const history = useHistory()
@@ -32,35 +35,83 @@ function Login({ setCurrentUser }) {
   }
   return (
     <AppWrapper>
+      <LoginWrapper>
        <img src={CoachableLogo} alt="logo"/>
+       {/* <img class="witch-image" src={flyingwitch} alt="witch decoration"/> */}
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
-        <h1>Log In</h1>
+        {/* <h1>Log In</h1> */}
         <p>
-          <label htmlFor="username">Username</label>
+          <LabelStyler htmlFor="username">Username </LabelStyler>
           <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
         </p>
         <p>
-          <label htmlFor="password">Password</label>
+          <LabelStyler htmlFor="password">Password </LabelStyler>
           <input type="password" name="" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </p>
         
-        <p><button type="submit">Log In</button></p>
-        <p>-- or --</p>
-        <p><Link to="/signup">Sign Up</Link></p>
+        <ButtonStyler type="submit">Log In</ButtonStyler>
+        <NavLink to="/signup">Signup</NavLink>
       </form>
+      </LoginWrapper>
       </AppWrapper>
   )
 }
 
+{/* <img src={signupfont} alt="signup"/> */}
+
 export default Login
 
 const AppWrapper = styled.div`
-background-color: skyblue;
+background:repeating-linear-gradient(
+  90deg, #fff, #fff 145px, #000 145px, #000 290px);
 top: 0px;
 bottom: 0px;
 left: 0px;
 right: 0px;
 position: absolute;
+`
 
+const LoginWrapper=styled.div`
+  background-color: white;
+  text-align: center;
+  margin:25vh;
+  padding-top: 25px;
+  padding-bottom: 25px;
+`
+
+const ButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 25px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-right: 30px;
+  &:hover {
+    color: white;
+    background: black;
+    /* padding-top: 10px; */
+  }
+`
+
+const NavLink = styled(Link)`
+  font-family: Graduate;
+  font-weight: 800;
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+
+  padding-top: 5px;
+  &:hover {
+    color: white;
+    background: black;
+  }
+  /* position: relative; */
+`;
+
+const LabelStyler = styled.label`
+  font-family: Graduate;
+  font-weight: 600;
+  font-size: 30px;
 `

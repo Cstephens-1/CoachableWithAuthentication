@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import GymClassCard from "./GymClassCard"
+import MyClassesImg from "../MyClassesImg.PNG"
 // import Login from "./Login";
 
 function MyClasses(){
@@ -80,18 +81,18 @@ function MyClasses(){
 
     return(
         <>
-        <h1>My classes</h1>
-
+        <H1styler>My Classes</H1styler>
         <FormStyler>
             <form onSubmit={handleSubmit}>
-                <h4>Create a new class</h4>
-                <label>Level: </label>
+                {/* <LabelStyler>Create a new class</LabelStyler>
+                <br></br> */}
+                <LabelStyler>Level: </LabelStyler>
                 <input type="text" name ="level" value={level} onChange={(e)=> setLevel(e.target.value)}/>
-                <label >Start time:</label>
+                <LabelStyler >Start time: </LabelStyler>
                 <input type="text" name="start time" value={startTime}  onChange={(e)=> setStartTime(e.target.value)}/>
-                <label>End time:</label>
+                <LabelStyler>End time: </LabelStyler>
                 <input type="text" name="start time" value={endTime}  onChange={(e)=> setEndTime(e.target.value)} />
-                <label>Description: </label>
+                <LabelStyler>Description: </LabelStyler>
                 <input type="text" name="start time" value={description}  onChange={(e)=> setDescription(e.target.value)} />
                 <ButtonStyler type="submit">Create a new class</ButtonStyler>
          
@@ -108,29 +109,61 @@ export default MyClasses
 
 const MyClassContainer = styled.div`
     display: flexbox;
-    flex-direction: row;
-    overflow: scroll;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: auto;
+    margin-top: 20px;
+`
+
+const LabelStyler = styled.label`
+  font-family: Graduate;
+  font-weight: 600;
+  margin-left: 10px;
 `
 
 const FormStyler=styled.div`
-    display: flex;
-    flex-direction: row;
+    display: flexbox;
+    flex-direction:row;
     /* background-color: green; */
     /* height: 200px; */
     /* width:6.5vw; */
     font-size: 20px;
-    margin-left: 7vw;
+    margin: auto;
     border-width: 2px;
     border-style: solid;
     border-color: black;
     padding: 10px;
     border-radius: 18px;
-    text-align: center;
+    text-align: left;
+    width: 70vw;
+    /* height: 10vh; */
 `
-const ButtonStyler= styled.button`
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: skyblue;
-    padding: 5px;
+// const ButtonStyler= styled.button`
+//     margin: 5px;
+//     border-radius: 5px;
+//     font-size: 15px;
+//     background-color: skyblue;
+//     padding: 5px;
+// `
+
+const ButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 25px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-left: 25vw;
+  margin-top: 10px;
+  &:hover {
+    color: white;
+    background: black;
+    /* padding-top: 10px; */
+  }
+`
+
+const H1styler = styled.h1`
+    font-family: Graduate;
+    font-size: 50px;
+    font-weight: 1500;
 `

@@ -17,12 +17,9 @@ function ExerciseCard({exercise, handleDelete, currentUser}){
         <h1>{exercise.title}</h1>
         <h5>Muscle group(s) worked: {exercise.muscle_group}</h5>
         <p>{exercise.description}</p>
-        {/* <p><link to={exercise.link}></link>Link to view exercise</p> */}
+    
         <p>uploaded by: {exercise.user.name}</p>
-        {exercise.user.name === currentUser.username?(<ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler>) : (<></>)}
-        {/* <ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler> */}
-        {/* <ButtonStyler onClick={editThisExerciseDescription}>Edit this exercise</ButtonStyler>
-        <input placeholder="update description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)}/> */}
+        {exercise.user.name === currentUser.name?(<ButtonStyler onClick={deleteThisCard}>Delete this exercise</ButtonStyler>) : (<></>)}
         </ExerciseCardStyler>
     )
 }

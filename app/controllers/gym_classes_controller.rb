@@ -12,7 +12,11 @@ class GymClassesController < ApplicationController
 
     def create 
         gym_class = GymClass.create(level: params[:level], start_time: params[:start_time], end_time: params[:end_time], description: params[:description], user_id: User.first.id)
-        render json: gym_class
+        if gym_class.save
+            render json: gym_class
+        else
+            render json: gym_class.errors, status: :unprocessable_entity
+        end
     end
 
     def update 

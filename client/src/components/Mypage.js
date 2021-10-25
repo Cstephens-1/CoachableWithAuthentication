@@ -56,10 +56,12 @@ export default Mypage
 
 const ClassWrapper = styled.div`
     width: 100vw;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     /* margin-left: 50%; */
     text-align: center;
 `
+
+
 
 // const MuscleManWrapper = styled.div`
 //     height: 55vh;

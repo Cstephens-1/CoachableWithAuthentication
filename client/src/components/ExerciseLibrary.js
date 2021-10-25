@@ -38,14 +38,13 @@ function ExerciseLibrary({currentUser}){
     }
 
     //CREATE a new exercise..
-    //****BUGS***currently need to refresh to see it. Does not include muscle group
     function handleSubmit(synthEvent){
         synthEvent.preventDefault();
         const newExercise = {
             title: title,
             muscle_group: muscleGroups,
             description: description,
-            // user_id: currentUser.id
+            user_id: currentUser.id
         }
         fetch("http://localhost:3000/exercises", {
             method: "POST",
