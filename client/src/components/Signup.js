@@ -43,7 +43,7 @@ function Signup({ setCurrentUser }) {
     <AppWrapper className="authForm">
       <FormWrapper>
       <form onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
+        <H1styler>Sign Up</H1styler>
         <p>
           <LabelStyler htmlFor="username">Username </LabelStyler>
           <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
@@ -61,8 +61,8 @@ function Signup({ setCurrentUser }) {
           <input type="text" name="" value={name} onChange={(e) => setName(e.target.value)}/>
         </p>
         
-        <p><ButtonStyler type="submit">Sign Up</ButtonStyler></p>
-        <p><NavLink to="/">Log In</NavLink></p>
+        <p><ButtonStyler type="submit">Sign Up</ButtonStyler>
+        <NavLink to="/">Log In</NavLink></p>
         {/* <p><ButtonStyler type="submit"></ButtonStyler></p> */}
         {/* <p><NavLink to="/signup"><img src={signupfont} alt="signup"/></NavLink></p> */}
       </form>
@@ -135,6 +135,7 @@ border-style: none;
   font-size: 25px;
   font-family: Graduate;
   font-weight: 800;
+  margin-right: 30px;
   &:hover {
     color: white;
     background: black;
@@ -155,3 +156,10 @@ border-style: none;
 //   /* position: relative; */
 // `;
 
+const H1styler = styled.h1`
+    font-family: Graduate;
+    font-size: 50px;
+    font-weight: 1500;
+    padding-top: 20px;
+    /* margin-left: 40vw; */
+`

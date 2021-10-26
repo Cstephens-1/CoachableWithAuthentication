@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 import styled from "styled-components"
 // import Button from 'react-bootstrap/Button';
  
-function NavBar({handleLogout}){
+function NavBar({handleLogout, currentUser}){
     return(
         <NavBarStyler>
         <NavLink to="/mypage">Home</NavLink>
@@ -10,7 +10,8 @@ function NavBar({handleLogout}){
         <NavLink to="/library">Exercise Library</NavLink>
         <NavLink to="/students">Student Library</NavLink>
         <NavLink to="/workouts">Workout Library</NavLink>
-         <NavLink to="/" onClick={handleLogout}>Logout</NavLink>
+        <NavLink to="/" onClick={handleLogout}>Logout</NavLink>
+        <SpanStyler>Welcome, {currentUser.name}</SpanStyler>
         </NavBarStyler>
     )
 }
@@ -20,7 +21,7 @@ function NavBar({handleLogout}){
 export default NavBar
 
 const NavBarStyler = styled.div`
-    background-color: black;
+    background-color: navy;
     /* height: 100vh; */
     width: 150vw;
     display: flex;
@@ -39,7 +40,20 @@ const NavBarStyler = styled.div`
 
 const NavLink = styled(Link)`
 font-family: Graduate;
-  color: white;
+  color: orange;
   text-decoration: none;
   padding:20px;
+  &:hover {
+    color: white;
+    background: navy;
+  }
+  `
+
+  const SpanStyler=styled.span`
+    font-family: Graduate;
+  color: orange;
+  text-decoration: none;
+  padding:20px;
+  right: 0;
+  position: absolute;
   `

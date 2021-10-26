@@ -98,9 +98,9 @@ function MyClasses(){
          
             </form>
             </FormStyler>
-        <MyClassContainer>
-            {mapClasses()}
-        </MyClassContainer>
+            <MyClassContainer>
+                {mapClasses()}
+            </MyClassContainer>
         </>
     )
 }
@@ -138,14 +138,6 @@ const FormStyler=styled.div`
     width: 70vw;
     /* height: 10vh; */
 `
-// const ButtonStyler= styled.button`
-//     margin: 5px;
-//     border-radius: 5px;
-//     font-size: 15px;
-//     background-color: skyblue;
-//     padding: 5px;
-// `
-
 const ButtonStyler = styled.button`
 border-style: none;
   background-color:white;

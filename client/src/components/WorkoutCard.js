@@ -12,7 +12,8 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                 workout.formatted_exercise_list.map(exercise_list =>{
                 return(
                     <>
-                    <li>{exercise_list.exercise_reps} {exercise_list.exercise_title} <button onClick={()=> DeleteAnAssignment(exercise_list.exercise_id)}>Delete this assignment</button></li>
+                    <LiStyler>{exercise_list.exercise_reps} {exercise_list.exercise_title} </LiStyler>
+                    <DeleteWorkoutButton onClick={()=> DeleteAnAssignment(exercise_list.exercise_id)}>Delete this assignment</DeleteWorkoutButton>
                     </>
                 )
             }))
@@ -68,10 +69,12 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
 
     return(
         <WorkoutCardStyler>
-        <h1>{workout.title}</h1>
-        <p>{mapExerciseLists(workout)}</p>
-        <ButtonStyler onClick={deleteThisWorkout}>Delete this workout</ButtonStyler>
-        <ButtonStyler onClick={addExerciseToWorkout}>Add a new exercise to this workout</ButtonStyler>
+        <Cardheader>
+        <DeleteButtonStyler onClick={deleteThisWorkout}>x</DeleteButtonStyler>
+        <H1styler>{workout.title}</H1styler>
+        <hr/>
+        </Cardheader>
+        
         <input value={reps} placeholder="reps" onChange={(e) => setReps(e.target.value)}/>
         <select type="text" value={selectedExercise} onChange={(e) => setSelectedExercise(e.target.value)}>
                 <option >Please select an exercise</option>
@@ -81,6 +84,8 @@ function WorkoutCard({workout, handleDelete, fetchWorkoutPlans, fetchExerciseLis
                     )
                 })}
             </select>
+            <AddButtonStyler onClick={addExerciseToWorkout}>Add a new exercise to this workout</AddButtonStyler>
+            <p>{mapExerciseLists(workout)}</p>
         </WorkoutCardStyler>
 
     )
@@ -103,4 +108,70 @@ const ButtonStyler= styled.button`
     font-size: 15px;
     background-color: skyblue;
     padding: 5px;
+`
+
+const DeleteButtonStyler=styled.button`
+border-radius: 50px;
+    height: 25px;
+    width: 27px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 230px;
+    background-color:white;
+    margin-top: 10px;
+  color:black;
+  font-size: 15px;
+  font-family: Graduate;
+  font-weight: 800;
+  &:hover {
+    color: black;
+    background: red;
+  }
+    
+`
+
+const H1styler = styled.h1`
+    font-family: Graduate;
+    text-decoration: underline;
+    font-size: 32px;
+    font-weight: 1500;
+`
+
+const AddButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 15px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-top: 10px;
+  /* margin-right: 30px; */
+  &:hover {
+    color: white;
+    background: black;
+    
+  }
+`
+
+//mess with the colors here
+const Cardheader=styled.div`
+    background-color: navy;
+    color: orange;
+`
+
+const LiStyler = styled.li`
+    /* font-family: Graduate; */
+    font-size: 15px;
+    list-style: none;
+`
+
+const DeleteWorkoutButton= styled.button`
+    width: 11vw;
+    font-family: Graduate;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    &:hover {
+    color: white;
+    background: red;
+  }
 `

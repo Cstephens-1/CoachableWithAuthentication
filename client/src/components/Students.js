@@ -59,16 +59,16 @@ function Students(){
 
     return(
         <>
-        <h1>My students</h1>
-        <form onSubmit={handleSubmit}>
-            <h4>Add a new student</h4>
-            <label>Name: </label>
+        <H1styler>Students</H1styler>
+            <H4styler>Add a new student</H4styler>
+        <FormStyler onSubmit={handleSubmit}>
+            <LabelStyler>Name: </LabelStyler>
             <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)}/>
-            <label>Notes: </label>
+            <LabelStyler>Notes: </LabelStyler>
             <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)}/>
-            <ButtonStyler type="submit" >Add a new student</ButtonStyler>
+            <AddButtonStyler type="submit" >Submit</AddButtonStyler>
 
-        </form>
+        </FormStyler>
         <LibaryStyler>
         {mapStudents(studentList)}
         </LibaryStyler>
@@ -79,9 +79,14 @@ function Students(){
 export default Students
 
 const LibaryStyler = styled.div`
-    display: flexbox;
-    flex-direction: row;
+   display: flexbox;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: auto;
+    margin-top: 20px;
 `
+
+
 
 const ButtonStyler= styled.button`
     margin: 5px;
@@ -89,4 +94,60 @@ const ButtonStyler= styled.button`
     font-size: 15px;
     background-color: skyblue;
     padding: 5px;
+`
+
+const LabelStyler = styled.label`
+  font-family: Graduate;
+  font-weight: 600;
+  font-size: 30px;
+`
+
+const H1styler = styled.h1`
+    font-family: Graduate;
+    font-size: 50px;
+    font-weight: 1500;
+    text-align: center;
+`
+
+const H4styler= styled.h4`
+    text-align:center;
+    font-family: Graduate;
+    /* margin-bottom: -5px; */
+    font-size: 24px;
+    /* margin-left: 25%; */
+
+`
+
+const AddButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 15px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-left: 5px;
+  /* margin-right: 30px; */
+  &:hover {
+    color: white;
+    background: black;
+  }
+`
+
+const FormStyler=styled.form`
+    display: flexbox;
+    flex-direction:row;
+    /* background-color: green; */
+    /* height: 200px; */
+    /* width:6.5vw; */
+    font-size: 20px;
+    margin: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    border-radius: 18px;
+    text-align: left;
+    width: 70vw;
+    /* height: 10vh; */
 `

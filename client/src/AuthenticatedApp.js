@@ -57,8 +57,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
   return (
     <div className="App">
       <nav>
-        <NavBar handleLogout={handleLogout}/>
-        <span>Logged in as {currentUser.username} <button onClick={handleLogout}>Logout</button></span>
+        <NavBar handleLogout={handleLogout} currentUser={currentUser}/>
       </nav>
       <Switch>
         <Route path="/mypage">

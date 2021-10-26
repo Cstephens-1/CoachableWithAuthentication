@@ -75,12 +75,13 @@ function WorkoutLibrary({currentUser}){
     return(
         <>
         <H1styler>Workouts</H1styler>
-        <h4>Plan your next workout</h4>
         <FormStyler>
         <form onSubmit={handleSubmit}>
+            <H4styler>Plan your next workout</H4styler>
+            <br></br>
             <LabelStyler>Name of workout: </LabelStyler>
             <input type="text" value={newWorkoutTitle} onChange={(e) => setTitle(e.target.value)}/>
-            <ButtonStyler type="submit">Create a new workout</ButtonStyler>
+            <ButtonStyler type="submit">Submit</ButtonStyler>
         </form>
         </FormStyler>
         <LibaryStyler>
@@ -114,7 +115,7 @@ const FormStyler=styled.div`
     padding: 10px;
     border-radius: 18px;
     text-align: left;
-    width: 50vw;
+    width: 40vw;
     /* height: 10vh; */
 `
 
@@ -133,7 +134,7 @@ border-style: none;
   font-size: 25px;
   font-family: Graduate;
   font-weight: 800;
-  margin-left: 5vw;
+  margin-left: 7vw;
   margin-top: 10px;
   &:hover {
     color: white;
@@ -146,4 +147,13 @@ const H1styler = styled.h1`
     font-family: Graduate;
     font-size: 50px;
     font-weight: 1500;
+`
+
+const H4styler= styled.h4`
+    /* text-align:center; */
+    font-family: Graduate;
+    margin-bottom: -5px;
+    font-size: 24px;
+    margin-left: 25%;
+
 `

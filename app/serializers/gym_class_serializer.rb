@@ -21,11 +21,11 @@ class GymClassSerializer < ActiveModel::Serializer
     end
 
     def start_time 
-      object.start_time.strftime('%A, %m/%d %l:%M %p')
+      object.start_time.strftime('%A, %m/%d: %I:%M %p')
     end
 
     def end_time 
-      object.end_time.strftime('%A, %m/%d %l:%M %p')
+      object.end_time.strftime('%I:%M %p')
     end
 
 

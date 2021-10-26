@@ -75,18 +75,18 @@ function ExerciseLibrary({currentUser}){
 
     return(
         <>
-        <h1>Exercise Library</h1>
+        <H1styler>Exercise Library</H1styler>
         <FormStyler onSubmit={handleSubmit}>
-            <label>Add a new exercise to the library</label>
-            <label>Title: </label>
+            {/* <LabelStyler>Add a new exercise to the library</LabelStyler> */}
+            <LabelStyler>Title: </LabelStyler>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-            <label>Muscle Group worked: </label>
+            <LabelStyler>Muscle Group worked: </LabelStyler>
             <input type="text" value={muscleGroups} onChange={(e) => setMuscleGroups(e.target.value)}/>
-            <label>Description: </label>
+            <LabelStyler>Description: </LabelStyler>
             <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
             {/* <label>Link to video or image: </label>
             <input /> */}
-            <button type="submit">Submit a new exercise: </button>
+            <ButtonStyler type="submit">Add a new exercise</ButtonStyler>
         </FormStyler>
         <LibaryStyler>
         {mapExercises(exerciseLibrary)}
@@ -122,4 +122,35 @@ const FormStyler=styled.form`
     padding: 10px;
     
 
+`
+
+const LabelStyler = styled.label`
+  font-family: Graduate;
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 5px;
+`
+
+const ButtonStyler = styled.button`
+border-style: none;
+  background-color:white;
+  color:black;
+  font-size: 25px;
+  font-family: Graduate;
+  font-weight: 800;
+  margin-right: 20px;
+  margin-left: 10px;
+  &:hover {
+    color: orange;
+    background: navy;
+    /* padding-top: 10px; */
+  }
+`
+
+const H1styler = styled.h1`
+    font-family: Graduate;
+    text-decoration: underline;
+    font-size: 32px;
+    font-weight: 1500;
+    text-align: center;
 `
