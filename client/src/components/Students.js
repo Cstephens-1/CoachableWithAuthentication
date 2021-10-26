@@ -88,13 +88,13 @@ const LibaryStyler = styled.div`
 
 
 
-const ButtonStyler= styled.button`
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: skyblue;
-    padding: 5px;
-`
+// const ButtonStyler= styled.button`
+//     margin: 5px;
+//     border-radius: 5px;
+//     font-size: 15px;
+//     background-color: skyblue;
+//     padding: 5px;
+// `
 
 const LabelStyler = styled.label`
   font-family: Graduate;
@@ -102,9 +102,17 @@ const LabelStyler = styled.label`
   font-size: 30px;
 `
 
+// const H1styler = styled.h1`
+//     font-family: Graduate;
+//     font-size: 50px;
+//     font-weight: 1500;
+//     text-align: center;
+// `
+
 const H1styler = styled.h1`
     font-family: Graduate;
-    font-size: 50px;
+    text-decoration: underline;
+    font-size: 32px;
     font-weight: 1500;
     text-align: center;
 `

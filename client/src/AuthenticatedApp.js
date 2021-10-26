@@ -9,6 +9,7 @@ import ExerciseLibrary from './components/ExerciseLibrary';
 import MyClasses from './components/MyClasses';
 import WorkoutLibrary from './components/WorkoutLibrary';
 import Students from './components/Students';
+import Footer from './components/Footer';
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
@@ -77,6 +78,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             <Students/>
           </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

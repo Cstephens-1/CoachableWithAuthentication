@@ -79,11 +79,11 @@ function ExerciseLibrary({currentUser}){
         <FormStyler onSubmit={handleSubmit}>
             {/* <LabelStyler>Add a new exercise to the library</LabelStyler> */}
             <LabelStyler>Title: </LabelStyler>
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <InputStyler type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
             <LabelStyler>Muscle Group worked: </LabelStyler>
-            <input type="text" value={muscleGroups} onChange={(e) => setMuscleGroups(e.target.value)}/>
+            <InputStyler type="text" value={muscleGroups} onChange={(e) => setMuscleGroups(e.target.value)}/>
             <LabelStyler>Description: </LabelStyler>
-            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
+            <InputStyler type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
             {/* <label>Link to video or image: </label>
             <input /> */}
             <ButtonStyler type="submit">Add a new exercise</ButtonStyler>
@@ -108,14 +108,21 @@ const LibaryStyler = styled.div`
     flex-direction: row;
 `
 
+const InputStyler=styled.input`
+    margin-right: 15px;
+    width: 100px;
+`
+
 const FormStyler=styled.form`
     display: flex;
     flex-direction: row;
+    
     /* background-color: green; */
     /* height: 200px; */
     /* width:6.5vw; */
     font-size: 20px;
     margin-left: 7vw;
+    margin-right: 7vw;
     border-width: 2px;
     border-style: solid;
     border-color: black;
@@ -138,8 +145,8 @@ border-style: none;
   font-size: 25px;
   font-family: Graduate;
   font-weight: 800;
-  margin-right: 20px;
-  margin-left: 10px;
+  /* margin-right: 20px; */
+  margin-left: 250px;
   &:hover {
     color: orange;
     background: navy;

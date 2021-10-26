@@ -15,13 +15,16 @@ function ExerciseCard({exercise, handleDelete, currentUser}){
     return(
         <ExerciseCardStyler>
         <ClassCardHeader>
-            {exercise.user.name === currentUser.name?(<DeleteButtonStyler onClick={deleteThisCard}>X</DeleteButtonStyler>) : (<></>)}
+            {exercise.user.name === currentUser.name?(<DeleteButtonStyler onClick={deleteThisCard}>X</DeleteButtonStyler>) : (<EmptyDiv></EmptyDiv>)}
         <H1styler>{exercise.title}</H1styler>
         <h5>Muscle group(s) worked: {exercise.muscle_group}</h5>
         </ClassCardHeader>
+
+       
         <p>{exercise.description}</p>
     
         <p>uploaded by: {exercise.user.name}</p>
+
         </ExerciseCardStyler>
     )
 }
@@ -65,7 +68,10 @@ border-radius: 50px;
     color: black;
     background: red;
   }
-    
+`
+
+const EmptyDiv = styled.div`
+    background-color: navy;
 `
 
 
@@ -81,4 +87,11 @@ const ClassCardHeader=styled.div`
     background-color:navy;
     color: orange;
     padding-bottom: 5px;
+`
+
+const ClassCardFooter=styled.div`
+    background-color: orange;
+    color:navy;
+    display: flex;
+    flex-direction: column;
 `

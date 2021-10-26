@@ -43,13 +43,14 @@
   33.33% { left: 70%; top: 70%; }
   66.66% { left: 50%; top: 30%; }
   100.0% { left: 30%; top: 70%; }
-}
-
+} */
+/* 
 .witch-image{
   position: 10, 10;
   height: 50px;
   width: 50px;
   animation: motion 5000ms;
+  background: blue;
 } */
 
 

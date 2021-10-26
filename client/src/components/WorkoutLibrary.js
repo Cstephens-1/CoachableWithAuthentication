@@ -7,20 +7,10 @@ function WorkoutLibrary({currentUser}){
     const [newWorkoutTitle, setTitle] = useState("")
     const[exerciseList, setExerciseList] = useState([])
 
-    // console.log("this is the currentUser", currentUser)
-
-    //fetch existing workout plans
-    // useEffect(()=>{
-    //     fetch("http://localhost:3000/workout_plans")
-    //     .then(resp=>resp.json())
-    //     .then(exercise=> setWorkoutLibrary(exercise))
-    // }, [])
-
     function fetchExerciseLists(){
         fetch("http://localhost:3000/exercise_lists")
         .then(resp=> resp.json())
         .then(eachExerciseList => setExerciseList(eachExerciseList))}
-
 
     useEffect(fetchExerciseLists, [])
 
@@ -69,7 +59,6 @@ function WorkoutLibrary({currentUser}){
             .then(resp=> resp.json())
             .then(workoutPlanFromDataBase => fetchWorkoutPlans())
     }
-    // setWorkoutLibrary([...workoutLibrary, workoutPlanFromDataBase])
 
 
     return(
@@ -85,7 +74,7 @@ function WorkoutLibrary({currentUser}){
         </form>
         </FormStyler>
         <LibaryStyler>
-            {mapWorkouts()}
+            {workoutLibrary.length === 0? (<EmptyNoticeStyler>No workouts added.</EmptyNoticeStyler>) : (mapWorkouts())}
         </LibaryStyler>
         </>
     )
@@ -94,10 +83,10 @@ function WorkoutLibrary({currentUser}){
 export default WorkoutLibrary
 
 const LibaryStyler = styled.div`
-       display: flexbox;
+    display: flexbox;
     flex-wrap: wrap;
     width: 90vw;
-    margin: auto;
+    margin-left: 44vw;
     margin-top: 20px;
 `
 
@@ -116,9 +105,9 @@ const FormStyler=styled.div`
     border-radius: 18px;
     text-align: left;
     width: 40vw;
+    margin-top: 10px;
     /* height: 10vh; */
 `
-
 
 const LabelStyler = styled.label`
   font-family: Graduate;
@@ -145,8 +134,10 @@ border-style: none;
 
 const H1styler = styled.h1`
     font-family: Graduate;
-    font-size: 50px;
+    text-decoration: underline;
+    font-size: 32px;
     font-weight: 1500;
+    text-align: center;
 `
 
 const H4styler= styled.h4`
@@ -155,5 +146,9 @@ const H4styler= styled.h4`
     margin-bottom: -5px;
     font-size: 24px;
     margin-left: 25%;
+`
 
+const EmptyNoticeStyler = styled.h3`
+    /* margin-left: 35vw; */
+    font-family: Graduate;
 `

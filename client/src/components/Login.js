@@ -37,7 +37,9 @@ function Login({ setCurrentUser }) {
     <AppWrapper>
       <LoginWrapper>
        <img src={CoachableLogo} alt="logo"/>
-       {/* <img class="witch-image" src={flyingwitch} alt="witch decoration"/> */}
+       {/* <div class="witch-image">
+          <img src={flyingwitch} alt="witch decoration"/>
+       </div> */}
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
         {/* <h1>Log In</h1> */}

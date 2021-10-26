@@ -50,7 +50,8 @@ function MyClasses(){
             body: JSON.stringify(newClass)})
             .then(resp=> resp.json())
             .then(newClassFromDataBase =>{
-                setGymClasses([...gymClasses, newClassFromDataBase])
+                setGymClasses([...gymClasses, newClassFromDataBase],
+                    fetchGymClasses())
         })
     }
 
@@ -99,13 +100,20 @@ function MyClasses(){
             </form>
             </FormStyler>
             <MyClassContainer>
-                {mapClasses()}
+
+                {gymClasses.length === 0? (<EmptyNoticeStyler>You have not added any classes yet.</EmptyNoticeStyler>) : (mapClasses())}
+                {/* {mapClasses()} */}
             </MyClassContainer>
         </>
     )
 }
 
 export default MyClasses
+
+const EmptyNoticeStyler = styled.h3`
+    margin-left: 35vw;
+    font-family: Graduate;
+`
 
 const MyClassContainer = styled.div`
     display: flexbox;
@@ -156,6 +164,8 @@ border-style: none;
 
 const H1styler = styled.h1`
     font-family: Graduate;
-    font-size: 50px;
+    text-decoration: underline;
+    font-size: 32px;
     font-weight: 1500;
+    text-align: center;
 `

@@ -7,13 +7,7 @@ import WorkoutLibrary from "./WorkoutLibrary"
  
  
 function Mypage(){
-    // const [gymClasses, setGymClasses] = useState([])
- 
-    // useEffect(() => {
-    //     fetch("http://localhost:3000/gym_classes")
-    //     .then(resp=> resp.json())
-    //     .then(gymclass => setGymClasses(gymclass))
-    // }, [])
+
 
     // console.log(gymClasses)
 
