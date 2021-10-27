@@ -18,11 +18,13 @@ function Students(){
     }
 
     //fetch all existing student information
-    useEffect(() =>{
+    function fetchStudents(){
+
         fetch("http://localhost:3000/students")
         .then(resp=> resp.json())
         .then(student => setStudentList(student))
-    }, [])
+    }
+    useEffect(fetchStudents, [])
 
     //format the existing students to their own card
     function mapStudents(studentList){
@@ -53,8 +55,7 @@ function Students(){
             },
             body: JSON.stringify(newStudent)})
             .then(resp=> resp.json())
-            .then(studentFromDataBase=> 
-                setStudentList([...studentList, studentFromDataBase]))
+            .then(studentFromDataBase=> fetchStudents())
     }
 
     return(
@@ -63,9 +64,9 @@ function Students(){
             <H4styler>Add a new student</H4styler>
         <FormStyler onSubmit={handleSubmit}>
             <LabelStyler>Name: </LabelStyler>
-            <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)}/>
+            <InputStyler type="text" value={newName} onChange={(e) => setNewName(e.target.value)}/>
             <LabelStyler>Notes: </LabelStyler>
-            <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)}/>
+            <InputStyler type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)}/>
             <AddButtonStyler type="submit" >Submit</AddButtonStyler>
 
         </FormStyler>
@@ -85,7 +86,10 @@ const LibaryStyler = styled.div`
     margin: auto;
     margin-top: 20px;
 `
-
+const InputStyler=styled.input`
+    margin-right: 15px;
+    width: 250px;
+`
 
 
 // const ButtonStyler= styled.button`
@@ -127,18 +131,18 @@ const H4styler= styled.h4`
 `
 
 const AddButtonStyler = styled.button`
-border-style: none;
+border-style: solid;
   background-color:white;
   color:black;
-  font-size: 15px;
+  font-size: 24px;
   font-family: Graduate;
   font-weight: 800;
   margin-top: 10px;
   margin-left: 5px;
   /* margin-right: 30px; */
   &:hover {
-    color: white;
-    background: black;
+    color: orange;
+    background:navy;
   }
 `
 
@@ -156,6 +160,6 @@ const FormStyler=styled.form`
     padding: 10px;
     border-radius: 18px;
     text-align: left;
-    width: 70vw;
+    width: 50vw;
     /* height: 10vh; */
 `

@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import { Redirect, useHistory, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import CoachableLogo from "../CoachableLogo1.PNG"
-import LoginButton from "../LogInButton.PNG"
 import flyingwitch from "../flyingwitch.png"
-import signupfont from '../signupfont.PNG'
+// import {useSpring, animated} from "react-spring"
+
+
 
 function Login({ setCurrentUser }) {
   const history = useHistory()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  // const props = useSpring({to: {opacity: 1}, from: {opacity:0}})
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -40,6 +42,7 @@ function Login({ setCurrentUser }) {
        {/* <div class="witch-image">
           <img src={flyingwitch} alt="witch decoration"/>
        </div> */}
+       {/* <animated.h1 style={props}>I will fade in</animated.h1> */}
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
         {/* <h1>Log In</h1> */}

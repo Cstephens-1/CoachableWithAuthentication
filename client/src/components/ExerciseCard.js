@@ -21,9 +21,9 @@ function ExerciseCard({exercise, handleDelete, currentUser}){
         </ClassCardHeader>
 
        
-        <p>{exercise.description}</p>
+        <PStyler>{exercise.description}</PStyler>
     
-        <p>uploaded by: {exercise.user.name}</p>
+        <PStyler>uploaded by: {exercise.user.name}</PStyler>
 
         </ExerciseCardStyler>
     )
@@ -35,12 +35,13 @@ export default ExerciseCard
 
 const ExerciseCardStyler = styled.div`
     width: 300px;
-    border-width: 2px;
+    border-width: 5px;
     border-style: solid;
-    border-color: black;
+    border-color: orange;
     text-align: center;
     margin: 6px;
-    border-radius: 8px;
+    background-color: navy;
+    /* border-radius: 8px; */
 `
 
 const ButtonStyler= styled.button`
@@ -91,7 +92,12 @@ const ClassCardHeader=styled.div`
 
 const ClassCardFooter=styled.div`
     background-color: orange;
-    color:navy;
+    color:white;
     display: flex;
     flex-direction: column;
+`
+
+const PStyler=styled.p`
+    font-family: Graduate;
+    color: orange;
 `

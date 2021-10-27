@@ -69,7 +69,7 @@ function WorkoutLibrary({currentUser}){
             <H4styler>Plan your next workout</H4styler>
             <br></br>
             <LabelStyler>Name of workout: </LabelStyler>
-            <input type="text" value={newWorkoutTitle} onChange={(e) => setTitle(e.target.value)}/>
+            <InputStyler type="text" value={newWorkoutTitle} onChange={(e) => setTitle(e.target.value)}/>
             <ButtonStyler type="submit">Submit</ButtonStyler>
         </form>
         </FormStyler>
@@ -86,8 +86,13 @@ const LibaryStyler = styled.div`
     display: flexbox;
     flex-wrap: wrap;
     width: 90vw;
-    margin-left: 44vw;
+    margin-left: auto;
     margin-top: 20px;
+`
+
+const InputStyler=styled.input`
+    /* margin-right: 15px; */
+    width: 200px;
 `
 
 const FormStyler=styled.div`
@@ -117,7 +122,7 @@ const LabelStyler = styled.label`
 `
 
 const ButtonStyler = styled.button`
-border-style: none;
+border-style: solid;
   background-color:white;
   color:black;
   font-size: 25px;
@@ -126,8 +131,8 @@ border-style: none;
   margin-left: 7vw;
   margin-top: 10px;
   &:hover {
-    color: white;
-    background: black;
+    color: orange;
+    background: navy;
     /* padding-top: 10px; */
   }
 `
@@ -149,6 +154,6 @@ const H4styler= styled.h4`
 `
 
 const EmptyNoticeStyler = styled.h3`
-    /* margin-left: 35vw; */
+    margin-left: 44vw;
     font-family: Graduate;
 `

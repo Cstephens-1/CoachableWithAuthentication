@@ -42,9 +42,9 @@ export default StudentCard
 
 const StudentCardStyler = styled.div`
     width: 300px;
-    border-width: 2px;
+    border-width: 5px;
     border-style: solid;
-    border-color: black;
+    border-color: orange;
     text-align: center;
     margin: 6px;
     background: navy;

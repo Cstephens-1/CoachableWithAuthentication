@@ -4,42 +4,15 @@ import './App.css';
 import { Switch, Route, useHistory } from 'react-router-dom'
 import Mypage from './components/Mypage';
 import NavBar from './components/NavBar';
-import { useState } from 'react';
+import trophycase from "./trophycase.jpg"
 import ExerciseLibrary from './components/ExerciseLibrary';
 import MyClasses from './components/MyClasses';
 import WorkoutLibrary from './components/WorkoutLibrary';
 import Students from './components/Students';
 import Footer from './components/Footer';
+import styled from 'styled-components';
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
-
-  // const [allStudents, setAllStudents]=useState([])
-  // const [allExercises, setAllExercises]=useState([])
-  // const [allWorkouts, setAllWorkouts]=useState([])
-  // const [allClasses, setAllClasses]=useState([])
-
-  // useState(()=>{
-  //   fetch("http://localhost:3000/students")
-  //   .then(resp=> resp.json())
-  //   .then(eachStudent => setAllStudents(eachStudent));
-
-  //   fetch("http://localhost:3000/gym_classes")
-  //   .then(resp=> resp.json())
-  //   .then(eachClass => setAllClasses(eachClass));
-
-  //   fetch("http://localhost:3000/workout_plans")
-  //   .then(resp=> resp.json())
-  //   .then(eachWorkoutPlan => setAllWorkouts(eachWorkoutPlan));
-
-  //   fetch("http://localhost:3000/students")
-  //   .then(resp=> resp.json())
-  //   .then(eachExercise => setAllExercises(eachExercise));
-  // }, [])
-
-  // console.log("these are the students ", allStudents)
-  // console.log("these are the Workouts ", allWorkouts)
-  // console.log("these are the Exercises ", allExercises)
-  // console.log("these are the Classes ", allClasses)
 
   const history = useHistory()
   
@@ -56,7 +29,8 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       })
   }
   return (
-    <div className="App">
+    <AppStyler>
+      
       <nav>
         <NavBar handleLogout={handleLogout} currentUser={currentUser}/>
       </nav>
@@ -79,26 +53,16 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           </Route>
       </Switch>
       <Footer />
-    </div>
+    </AppStyler>
   );
 }
 
 export default AuthenticatedApp;
-
-// {/* <Switch>
-//         <Route exact path="/">
-//             <Login />
-//           </Route>
-
-//           <Route exact path="/signup">
-//             <Signup />
-//           </Route>
-
-//           <Route exact path="/mypage">
-//             <Mypage />
-//           </Route> */}
-
          
+
+const AppStyler = styled.div`
+  background-image: "./trophycase.jpg"
+`
 
           
 

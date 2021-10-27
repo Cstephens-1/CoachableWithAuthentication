@@ -95,11 +95,12 @@ export default WorkoutCard
 
 const WorkoutCardStyler = styled.div`
     width: 300px;
-    border-width: 2px;
+    border-width: 4px;
     border-style: solid;
-    border-color: black;
+    border-color: orange;
     text-align: center;
     margin: 6px;
+    background-color: navy;
 `
 
 const ButtonStyler= styled.button`
@@ -139,16 +140,16 @@ const H1styler = styled.h1`
 
 const AddButtonStyler = styled.button`
 border-style: none;
-  background-color:white;
-  color:black;
+  background-color:navy;
+  color:orange;
   font-size: 15px;
   font-family: Graduate;
   font-weight: 800;
   margin-top: 10px;
   /* margin-right: 30px; */
   &:hover {
-    color: white;
-    background: black;
+    color: navy;
+    background: orange;
     
   }
 `

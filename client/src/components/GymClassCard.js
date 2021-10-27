@@ -162,16 +162,16 @@ export default GymClassCard
 
 const AddButtonStyler = styled.button`
 border-style: none;
-  background-color:white;
-  color:black;
+  background-color:navy;
+  color:orange;
   font-size: 15px;
   font-family: Graduate;
   font-weight: 800;
   margin-top: 10px;
   /* margin-right: 30px; */
   &:hover {
-    color: white;
-    background: black;
+    color: navy;
+    background: orange;
   }
 `
 
@@ -233,6 +233,7 @@ const DeleteWorkoutButton= styled.button`
 
 const DescriptionStyler=styled.p`
     font-family: Graduate;
+    color: orange;
 `
 
 const GymClassCardEachWorkoutContainer = styled.div`
@@ -243,6 +244,7 @@ const H5Styler=styled.h5`
     margin-bottom: 5px;
     font-family: Graduate;
     font-size: 20px;
+    color: orange;
 `
 
 const LevelStyler=styled.h1`
@@ -253,6 +255,8 @@ text-decoration: underline;
 const LiStyler = styled.li`
     font-size: 15px;
     list-style: none;
+    color: orange;
+    padding-top: 10px;
 `
 
 const StudentStyler=styled.h5`
@@ -260,16 +264,18 @@ const StudentStyler=styled.h5`
     font-size: 20px;
     text-decoration: underline;
     margin-bottom: 5px;
+    color: orange
 `
 
 const TimeStyler=styled.h5`
     font-size: 13px;
 `
 const UnclickedGymCardStyler = styled.div`
-    border-width: 2px;
-    border-color: black;
+    border-width: 4px;
+    border-color: orange;
     border-style: solid;
-    width: 250px;
+    background-color: navy;
+    width: 260px;
     height: 300px;
     text-align: center;
     padding: 20px;
@@ -279,11 +285,15 @@ const UnclickedGymCardStyler = styled.div`
     position: flex;
     overflow: scroll;
     &::-webkit-scrollbar {
-        width: 10px;
-        border: 1px solid black;
-    }
-    &::-webkit-slider-thumb {
-        width: 10px;
-        background-color: red
+        width: 5px;
+        /* border: 1px solid black; */
+    };
+    &::-webkit-scrollbar-thumb {
+        width: 5px;
+        background-color: orange
+    };
+    &::-webkit-scrollbar:horizontal {
+        height: 0px;
+        /* border: 1px solid black; */
     }
 `

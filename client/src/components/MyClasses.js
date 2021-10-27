@@ -101,7 +101,7 @@ function MyClasses(){
             </FormStyler>
             <MyClassContainer>
 
-                {gymClasses.length === 0? (<EmptyNoticeStyler>You have not added any classes yet.</EmptyNoticeStyler>) : (mapClasses())}
+                {gymClasses.length === 0? (<EmptyNoticeStyler>No classes added.</EmptyNoticeStyler>) : (mapClasses())}
                 {/* {mapClasses()} */}
             </MyClassContainer>
         </>
@@ -119,7 +119,7 @@ const MyClassContainer = styled.div`
     display: flexbox;
     flex-wrap: wrap;
     width: 90vw;
-    margin: auto;
+    margin-left: auto;
     margin-top: 20px;
 `
 
@@ -132,9 +132,6 @@ const LabelStyler = styled.label`
 const FormStyler=styled.div`
     display: flexbox;
     flex-direction:row;
-    /* background-color: green; */
-    /* height: 200px; */
-    /* width:6.5vw; */
     font-size: 20px;
     margin: auto;
     border-width: 2px;
@@ -144,10 +141,9 @@ const FormStyler=styled.div`
     border-radius: 18px;
     text-align: left;
     width: 70vw;
-    /* height: 10vh; */
 `
 const ButtonStyler = styled.button`
-border-style: none;
+border-style: solid;
   background-color:white;
   color:black;
   font-size: 25px;
@@ -156,9 +152,8 @@ border-style: none;
   margin-left: 25vw;
   margin-top: 10px;
   &:hover {
-    color: white;
-    background: black;
-    /* padding-top: 10px; */
+    color: orange;
+    background: navy;
   }
 `
 

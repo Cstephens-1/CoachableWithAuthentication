@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
     skip_before_action :confirm_authentication
     
     def index 
-        students = Student.all
+        students = Student.all.order(:name)
         render json: students
     end
 

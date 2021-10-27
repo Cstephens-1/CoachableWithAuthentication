@@ -106,11 +106,12 @@ export default ExerciseLibrary
 const LibaryStyler = styled.div`
     display: flexbox;
     flex-direction: row;
+    flex-wrap: wrap;
 `
 
 const InputStyler=styled.input`
     margin-right: 15px;
-    width: 100px;
+    width: 250px;
 `
 
 const FormStyler=styled.form`
@@ -139,14 +140,14 @@ const LabelStyler = styled.label`
 `
 
 const ButtonStyler = styled.button`
-border-style: none;
+border-style: solid;
   background-color:white;
   color:black;
   font-size: 25px;
   font-family: Graduate;
   font-weight: 800;
   /* margin-right: 20px; */
-  margin-left: 250px;
+  /* margin-left: 250px; */
   &:hover {
     color: orange;
     background: navy;
