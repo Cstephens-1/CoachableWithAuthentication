@@ -1,6 +1,9 @@
 class GymClassIndexSerializerSerializer < ActiveModel::Serializer
-    attributes :id, :level, :description, :start_time, :end_time, :formatted_students
-    # has_one :user
+    attributes :id, :level, :description, :start_time, :user_id, :end_time, :formatted_students
+
+
+
+    has_one :user
   
     # has_many :class_students
     has_many :class_workouts

@@ -32,7 +32,8 @@ function StudentCard({student, handleDelete}){
         <StudentCardStyler>
         <DeleteButtonStyler onClick={deleteThisStudent}>X</DeleteButtonStyler>
         <H1styler>{student.name}</H1styler>
-        <PStyler>Notes: {student.notes}</PStyler>
+        {student.notes !== ""? (<PStyler>Notes: {student.notes}</PStyler>) : <></>}
+        {/* <PStyler>Notes: {student.notes}</PStyler> */}
         </StudentCardStyler>
         </>
     )

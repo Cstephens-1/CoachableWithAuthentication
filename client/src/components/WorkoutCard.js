@@ -164,6 +164,7 @@ const LiStyler = styled.li`
     /* font-family: Graduate; */
     font-size: 15px;
     list-style: none;
+    color: orange;
 `
 
 const DeleteWorkoutButton= styled.button`

@@ -21,7 +21,6 @@ function MyClasses(){
 
     useEffect(fetchGymClasses, [])
 
-
       //DELETE an exercise
       function handleDelete(gymClass){
         fetch(`http://localhost:3000/gym_classes/${gymClass.id}`,{ 
@@ -54,18 +53,6 @@ function MyClasses(){
                     fetchGymClasses())
         })
     }
-
-    // function deleteAStudent(student){
-    //     fetch(`http://localhost:3000/class_students/${student.id}`,{ 
-    //         method: "DELETE"
-    //     })
-    //     let classStudentsRemaining = classStudent.filter(eachStudent => eachStudent.id !== classStudent.id);
-    //     console.log(classStudentsRemaining)
-    //     setClassStudents([...classStudentsRemaining])
-    // }
-
-    
-
 
 
     function mapClasses(){

@@ -34,6 +34,8 @@ function WorkoutLibrary({currentUser}){
     }
 
     
+
+    
     //delete a workout plan
     function handleDelete(workoutPlan){
         fetch(`http://localhost:3000/workout_plans/${workoutPlan.id}`,{ 
