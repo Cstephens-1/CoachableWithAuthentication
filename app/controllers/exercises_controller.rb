@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
     skip_before_action :confirm_authentication
     def index
-        exercises = Exercise.all 
+        exercises = Exercise.all
         render json: exercises
     end
 
